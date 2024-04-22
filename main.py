@@ -3,6 +3,25 @@ import tkinter as tk
 from tkinter import messagebox, simpledialog
 import psycopg2
 
+class Estudiante:
+    def __init__(self, estudiante_id, nombre, fecha_nacimiento, carrera):
+        self.estudiante_id = estudiante_id
+        self.nombre = nombre
+        self.fecha_nacimiento = fecha_nacimiento
+        self.carrera = carrera
+
+class Materia:
+    def __init__(self, codigo_materia, nombre, creditos):
+        self.codigo_materia = codigo_materia
+        self.nombre = nombre
+        self.creditos = creditos
+
+class Nota:
+    def __init__(self, estudiante, materia, nota):
+        self.estudiante = estudiante
+        self.materia = materia
+        self.nota = nota
+
 class VistaBaseDatos:
     def __init__(self, host, port, database, user, password):
         self.connection = psycopg2.connect(
